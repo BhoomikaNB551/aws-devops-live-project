@@ -8,3 +8,4 @@
 # Terraform crash logs
 crash.log
 crash.*.log
+app/target/
