@@ -8,7 +8,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "AWS DevOps Live Project - Application is Running!";
+        return "AWS DevOps Live Project - Version 1.1 is Running!";
     }
 
     @GetMapping("/health")

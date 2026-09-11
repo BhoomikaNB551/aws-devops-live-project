@@ -1,3 +1,4 @@
+<<'EOF'
 pipeline {
     agent any
 
@@ -19,6 +20,7 @@ pipeline {
 
                         echo "JAVA_HOME=$JAVA_HOME"
                         java -version
+                        /usr/lib/jvm/java-21-openjdk-amd64/bin/javac -version
                         mvn -version
 
                         mvn clean package -DskipTests
@@ -29,14 +31,15 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t bhoomika98/devops-demo:1.0 ./app'
+                sh 'docker build -t bhoomika98/devops-demo:1.1 ./app'
             }
         }
 
         stage('Docker Push') {
             steps {
-                sh 'docker push bhoomika98/devops-demo:1.0'
+                sh 'docker push bhoomika98/devops-demo:1.1'
             }
         }
     }
 }
+EOF
